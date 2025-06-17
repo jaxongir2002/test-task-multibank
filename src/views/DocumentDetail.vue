@@ -9,6 +9,7 @@
           <v-col cols="12" sm="6">
             <strong>Тип документа:</strong> {{ document.type }}
           </v-col>
+
           <v-col cols="12" sm="6">
             <strong>Номер:</strong> {{ document.number }}
           </v-col>

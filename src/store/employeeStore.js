@@ -1,4 +1,5 @@
 import {defineStore} from 'pinia'
+import axios from "axios";
 
 export const useEmployeeStore = defineStore('employee', {
     state: () => ({
@@ -12,30 +13,9 @@ export const useEmployeeStore = defineStore('employee', {
         async fetchEmployees() {
             this.loading = true
             try {
-                this.employees = [
-                    {
-                        id: 1,
-                        firstName: 'John',
-                        lastName: 'Smith',
-                        passport: 'AA123456',
-                        birthDate: '1990-01-01',
-                        gender: 'М',
-                        isActive: true
-                    },
-                    {
-                        id: 2,
-                        firstName: 'Jane',
-                        lastName: 'Doe',
-                        passport: 'BB654321',
-                        birthDate: '1992-05-12',
-                        gender: 'Ж',
-                        isActive: false
-<<<<<<< HEAD
-                    }
-=======
-                    },
->>>>>>> 0c8288e (add document page)
-                ]
+                const res = await axios.get('http://localhost:3000/employees');
+
+                this.employees = res.data;
                 this.total = 50
             } catch (error) {
                 console.error('Error:', error)

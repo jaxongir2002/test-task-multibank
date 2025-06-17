@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<script setup lang="ts">
-
-</script>
-
-<template>
-
-</template>
-
-<style scoped>
-
-</style>
-=======
 <template>
   <v-row class="mb-3" align="center" justify="space-between">
     <h2 class="text-h5">Список документы</h2>
@@ -77,4 +64,3 @@ onMounted(() => {
   documentStore.fetchDocuments()
 })
 </script>
->>>>>>> 0c8288e (add document page)

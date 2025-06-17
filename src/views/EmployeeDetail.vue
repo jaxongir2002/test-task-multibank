@@ -11,20 +11,10 @@
           <v-col cols="6"><strong>Паспорт:</strong> {{ employee.passport }}</v-col>
           <v-col cols="6"><strong>Пол:</strong> {{ employee.gender }}</v-col>
           <v-col cols="6"><strong>Активен:</strong>
-<<<<<<< HEAD
-            <v-chip
-                :color="employee.isActive ? 'green' : 'red'"
-                :text="employee.isActive ? 'Активный' : 'неактивный'"
-                class="text-uppercase"
-                size="small"
-                label
-            ></v-chip>
-=======
             <v-checkbox-btn
                 v-model="employee.isActive"
                 :ripple="false"
             ></v-checkbox-btn>
->>>>>>> 0c8288e (add document page)
           </v-col>
         </v-row>
       </v-card-text>

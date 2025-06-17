@@ -17,6 +17,87 @@
       "birthDate": "1992-05-12",
       "gender": "Ж",
       "isActive": false
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "passport": "BB654321",
+      "birthDate": "1992-05-12",
+      "gender": "Ж",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "firstName": "st",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
     }
   ],
   "documents": [

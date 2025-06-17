@@ -30,9 +30,9 @@
 </template>
 
 <script setup>
-import {useRoute, useRouter} from 'vue-router'
-import {onMounted, ref} from 'vue'
-import {useEmployeeStore} from '@/store/employeeStore'
+import {useRoute, useRouter} from 'vue-router';
+import {onMounted, ref} from 'vue';
+import {useEmployeeStore} from '@/store/employeeStore';
 
 const route = useRoute()
 const router = useRouter()

@@ -18,13 +18,22 @@
       :items="documentStore.documents"
       :items-per-page="documentStore.limit"
       :loading="documentStore.loading"
-      :page.sync="documentStore.page"
-      :server-items-length="documentStore.total"
       class="elevation-1"
+
       @update:page="documentStore.setPage"
+      show-current-page
+      @update:itemsPerPage="documentStore.setLimit"
   >
     <template #item.actions="{ item }">
       <v-btn size="small" @click="goToDetail(item.id)">Открыть</v-btn>
+    </template>
+    <template v-slot:bottom>
+      <div class="text-center pt-2">
+        <v-pagination
+            @update:model-value="documentStore.setPage"
+            :length="documentStore.total"
+        ></v-pagination>
+      </div>
     </template>
   </v-data-table>
 </template>

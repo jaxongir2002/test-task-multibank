@@ -5,22 +5,24 @@
       :items="employeeStore.employees"
       :items-per-page="employeeStore.limit"
       :loading="employeeStore.loading"
-      :page.sync="employeeStore.page"
-      :server-items-length="employeeStore.total"
       class="elevation-1"
-      :items-length="employeeStore.total"
-      @update:page="employeeStore.setPage"
   >
     <template #item.isActive="{ item }">
-      <div>
-        <v-checkbox-btn
-            v-model="item.isActive"
-            :ripple="false"
-        ></v-checkbox-btn>
-      </div>
+      <v-checkbox-btn
+          v-model="item.isActive"
+          :ripple="false"
+      ></v-checkbox-btn>
     </template>
     <template #item.actions="{ item }">
       <v-btn size="small" @click="goToDetail(item.id)">Открыть</v-btn>
+    </template>
+    <template v-slot:bottom>
+      <div class="text-center pt-2">
+        <v-pagination
+            @update:model-value="employeeStore.setPage"
+            :length="employeeStore.total"
+        ></v-pagination>
+      </div>
     </template>
   </v-data-table>
 </template>

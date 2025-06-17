@@ -13,10 +13,10 @@ export const useEmployeeStore = defineStore('employee', {
         async fetchEmployees() {
             this.loading = true
             try {
-                const res = await axios.get('http://localhost:3000/employees');
+                const res = await axios.get(`http://localhost:3000/employees?_page=${this.page}&_limit=${this.limit}`);
 
                 this.employees = res.data;
-                this.total = 50
+                this.total = 2;
             } catch (error) {
                 console.error('Error:', error)
             } finally {
@@ -25,6 +25,10 @@ export const useEmployeeStore = defineStore('employee', {
         },
         setPage(newPage) {
             this.page = newPage
+            this.fetchEmployees()
+        },
+        setLimit(newLimit) {
+            this.limit = newLimit
             this.fetchEmployees()
         }
     }

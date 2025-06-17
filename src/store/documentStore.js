@@ -14,11 +14,10 @@ export const useDocumentStore = defineStore('document', {
         async fetchDocuments() {
             this.loading = true
             try {
-                const res = await axios.get('http://localhost:3000/documents');
+                const res = await axios.get(`http://localhost:3000/documents?_page=${this.page}&_limit=${this.limit}`);
 
                 this.documents = res.data;
-                this.total = 50
-
+                this.total = 2;
                 // Filter by employee
                 if (this.employeeFilter) {
                     this.documents = this.documents.filter(doc => doc.employeeId === this.employeeFilter)
@@ -33,6 +32,10 @@ export const useDocumentStore = defineStore('document', {
         },
         setPage(newPage) {
             this.page = newPage
+            this.fetchDocuments()
+        },
+        setLimit(newLimit) {
+            this.limit = newLimit
             this.fetchDocuments()
         },
         setEmployeeFilter(id) {

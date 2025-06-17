@@ -1,0 +1,45 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Smith",
+      "passport": "AA123456",
+      "birthDate": "1990-01-01",
+      "gender": "М",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "passport": "BB654321",
+      "birthDate": "1992-05-12",
+      "gender": "Ж",
+      "isActive": false
+    }
+  ],
+  "documents": [
+    {
+      "id": 1,
+      "type": "Счет-фактура",
+      "number": "DOC-1000",
+      "date": "2023-06-11",
+      "description": "Описание документа 2",
+      "employeeId": 1,
+      "invoiceType": "стандартная",
+      "trusteeName": "John Smith"
+    },
+    {
+      "id": 2,
+      "type": "Доверенность",
+      "number": "DOC-1001",
+      "date": "2023-06-12",
+      "invoiceType": "дополнительная",
+      "description": "Описание документа 3",
+      "employeeId": 2,
+      "trusteeName": "Maryland Island"
+    }
+  ]
+}
+

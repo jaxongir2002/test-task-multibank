@@ -1,4 +1,5 @@
 import {defineStore} from 'pinia'
+import axios from "axios";
 
 export const useDocumentStore = defineStore('document', {
     state: () => ({
@@ -13,31 +14,16 @@ export const useDocumentStore = defineStore('document', {
         async fetchDocuments() {
             this.loading = true
             try {
-                // Mock data:
-                let docs = [{
-                    id: 1,
-                    type: 'Счет-фактура',
-                    number: `DOC-1000`,
-                    date: `2023-06-11`,
-                    description: `Описание документа 2`,
-                    employeeId: 1
-                },
-                    {
-                        id: 2,
-                        type: 'Доверенность',
-                        number: `DOC-1001`,
-                        date: `2023-06-12`,
-                        description: `Описание документа 3`,
-                        employeeId: 2
-                    }]
+                const res = await axios.get('http://localhost:3000/documents');
+
+                this.documents = res.data;
+                this.total = 50
 
                 // Filter by employee
                 if (this.employeeFilter) {
-                    docs = docs.filter(doc => doc.employeeId === this.employeeFilter)
+                    this.documents = this.documents.filter(doc => doc.employeeId === this.employeeFilter)
                 }
 
-                this.documents = docs
-                this.total = 50
             } catch (error) {
                 console.error('Ошибка загрузки документов:', error)
                 this.documents = []

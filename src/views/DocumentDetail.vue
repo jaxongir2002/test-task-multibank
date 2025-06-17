@@ -10,6 +10,9 @@
             <strong>Тип документа:</strong> {{ document.type }}
           </v-col>
           <v-col cols="12" sm="6">
+            <strong>Номер:</strong> {{ document.number }}
+          </v-col>
+          <v-col cols="12" sm="6">
             <strong>Дата:</strong> {{ document.date }}
           </v-col>
           <v-col cols="12" sm="6" v-if="document.type === 'Счет-фактура'">
@@ -37,10 +40,11 @@ import {useRoute, useRouter} from 'vue-router';
 import {onMounted, ref} from 'vue';
 import {useDocumentStore} from "@/store/documentStore.js";
 
-const route = useRoute()
-const router = useRouter()
-const documentStore = useDocumentStore()
-const document = ref(null)
+const route = useRoute();
+const router = useRouter();
+const documentStore = useDocumentStore();
+
+const document = ref(null);
 
 onMounted(async () => {
   const id = route.params.id
@@ -49,7 +53,7 @@ onMounted(async () => {
     await documentStore.fetchDocuments()
   }
 
-  document.value = documentStore.documents.find((e) => e.id === id)
+  document.value = documentStore.documents.find((e) => e.id == id)
 })
 
 const goBack = () => {

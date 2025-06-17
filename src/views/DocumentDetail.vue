@@ -5,6 +5,7 @@
         Документ №{{ document.number }}
       </v-card-title>
       <v-card-text>
+
         <v-row>
           <v-col cols="12" sm="6">
             <strong>Тип документа:</strong> {{ document.type }}

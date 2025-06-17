@@ -9,6 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@mdi/font": "^7.4.47",
+>>>>>>> 0c8288e (add document page)
     "axios": "^1.10.0",
     "pinia": "^3.0.3",
     "vue": "^3.5.13",

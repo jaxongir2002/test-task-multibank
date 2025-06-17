@@ -30,7 +30,11 @@ export const useEmployeeStore = defineStore('employee', {
                         birthDate: '1992-05-12',
                         gender: 'Ж',
                         isActive: false
+<<<<<<< HEAD
                     }
+=======
+                    },
+>>>>>>> 0c8288e (add document page)
                 ]
                 this.total = 50
             } catch (error) {

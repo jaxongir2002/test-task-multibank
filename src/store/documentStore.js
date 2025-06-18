@@ -14,10 +14,10 @@ export const useDocumentStore = defineStore('document', {
         async fetchDocuments() {
             this.loading = true
             try {
-                const res = await axios.get(`http://localhost:3000/documents?_page=${this.page}&_limit=${this.limit}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}documents?_page=${this.page}&_per_page=${this.limit}`);
 
-                this.documents = res.data;
-                this.total = 2;
+                this.documents = res.data.data;
+                this.total = res.data.pages;
                 // Filter by employee
                 if (this.employeeFilter) {
                     this.documents = this.documents.filter(doc => doc.employeeId === this.employeeFilter)

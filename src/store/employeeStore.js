@@ -13,10 +13,10 @@ export const useEmployeeStore = defineStore('employee', {
         async fetchEmployees() {
             this.loading = true
             try {
-                const res = await axios.get(`http://localhost:3000/employees?_page=${this.page}&_limit=${this.limit}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}employees?_page=${this.page}&_per_page=${this.limit}`);
 
-                this.employees = res.data;
-                this.total = 2;
+                this.employees = res.data.data;
+                this.total = res.data.pages;
             } catch (error) {
                 console.error('Error:', error)
             } finally {
